@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7549" systemVersion="14B25" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Item" representedClassName="PRODUCT_MODULE_NAME.Item" syncable="YES">
+        <attribute name="itemID" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="itemList" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ItemList" inverseName="item" inverseEntity="ItemList" syncable="YES"/>
+        <relationship name="subItem" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SubItem" inverseName="item" inverseEntity="SubItem" syncable="YES"/>
+    </entity>
+    <entity name="ItemList" representedClassName="PRODUCT_MODULE_NAME.ItemList" syncable="YES">
+        <relationship name="item" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Item" inverseName="itemList" inverseEntity="Item" syncable="YES"/>
+    </entity>
+    <entity name="SubItem" representedClassName="PRODUCT_MODULE_NAME.SubItem" syncable="YES">
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="insideOrder" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="item" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Item" inverseName="subItem" inverseEntity="Item" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="ItemList" positionX="-63" positionY="-18" width="128" height="60"/>
+        <element name="Item" positionX="-54" positionY="-9" width="128" height="90"/>
+        <element name="SubItem" positionX="-36" positionY="9" width="128" height="105"/>
+    </elements>
+</model>
